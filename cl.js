@@ -1,12 +1,16 @@
 var page = document.querySelector("#main");
-var crsr = document.querySelector("#cursor");
-
-page.addEventListener("mousemove", function (dets) {
-  console.log(dets);
-  crsr.style.left = dets.clientX + "px";
-  crsr.style.top = dets.clientY + "px";
-  ease: Power3;
-});
+function circleMouseFollower(){
+  window.addEventListener("mousemove", function (dets) {
+    document.querySelector("#cursor").style.transform = `translate(${dets.clientX}px , ${dets.clientY}px)`
+  })
+}
+function MouseFollower() {
+  window.addEventListener("mousemove", function (dets) {
+    document.querySelector("#crsr").style.transform = `translate(${dets.clientX}px , ${dets.clientY}px)`;
+  });
+}
+circleMouseFollower();
+MouseFollower();
 document.querySelectorAll(".elem")
   .forEach(function (elem) {
     elem.addEventListener("mousemove", function (details) {
