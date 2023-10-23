@@ -15,7 +15,6 @@ document.querySelectorAll(".elem")
   .forEach(function (elem) {
     elem.addEventListener("mousemove", function (details) {
       var toploc = details.clientY - elem.getBoundingClientRect().top;
-
       gsap.to(elem.querySelector("img"), {
         opacity: 1,
         ease: Power3,
